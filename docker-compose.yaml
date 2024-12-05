@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  video-bpy-api:
+    build: ./video-bpy-api
+    container_name: video-bpy-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/tmp/uploads
+      - ./outputs:/tmp/outputs
+    restart: unless-stopped
